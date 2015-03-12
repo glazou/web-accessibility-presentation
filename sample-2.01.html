@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Web accessibility demo</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
+		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+	</head>
+	<body class="claro">
+		<style>
+			p, img, figure {
+				width: 300px;
+			}
+			
+			figure {
+				margin: 0px;
+				font-weight: bold;
+			}
+		
+		</style>
+		
+		<h1 tabindex="0">Web accessibility demo</h1>
+		<h2 tabindex="0">Alternative text</h2>
+
+		<p tabindex="0">
+			<img 
+				src="http://www.enlightphoto.com/views/blogpix/post12/120913b_SRA-0056-0063_Sweetwater_20x48_pano_750.jpg" 
+				alt="The Sweetwater Mountains CALIFORNIA" />
+		</p>
+		
+		<img src="assets/separator.png" alt="" />
+
+		<p tabindex="0">
+			<img 
+				src="http://upload.wikimedia.org/wikipedia/commons/b/b1/Puno-Peru.jpeg" 
+				alt=""/>
+			<strong>Puno Peru</strong>
+		</p>
+
+		<img src="assets/separator.png" alt="" />
+		
+		<p>
+			<figure tabindex="0">
+				<img 
+					src="http://upload.wikimedia.org/wikipedia/commons/8/8c/Lake_Sabrina_before_Sunrise.jpg" 
+					alt="" />
+				<figcaption>Bishop Creek CALIFORNIA</figcaption>
+			</figure>
+		</p>
+		
+		<p style="font-style: italic; width: 100%;" tabindex="0">Content from <a href="http://story.maps.arcgis.com/apps/MapJournal/index.html?appid=dc91db9f6409462b887ebb1695b9c201&webmap=dd6f7f93d54341a69a47002696cf5744" target="_blank">Explore a Tapestry of World Ecosystems</a><p>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Web accessibility demo</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
+		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+	</head>
+	<body class="claro">
+		<h1 tabindex="0">Web accessibility demo</h1>
+		<h2 tabindex="0">WAI-ARIA</h2>
+		
+		<style>
+			figure, img {
+				width: 300px;
+			}
+			
+			fieldset {
+				position: relative;
+			}
+
+			[role="tooltip"] {
+				display: block;
+				position: absolute;
+				top: 30px;
+				left: 300px;
+				opacity: 0;
+			}
+
+			input:focus + [role="tooltip"] {
+				opacity: 1;
+			}
+		</style>
+
+		<p role="presentation">
+			<img src="http://www.enlightphoto.com/views/blogpix/post12/120913b_SRA-0056-0063_Sweetwater_20x48_pano_750.jpg" 
+				alt="The Sweetwater Mountains CALIFORNIA" 
+				tabindex="0" 
+				role="presentation"/>
+		</p>
+		
+		<p aria-hidden="true">
+			<img src="http://www.enlightphoto.com/views/blogpix/post12/120913b_SRA-0056-0063_Sweetwater_20x48_pano_750.jpg" 
+				alt="The Sweetwater Mountains CALIFORNIA" 
+				tabindex="0" />
+		</p>
+		
+		<form action="">
+			<fieldset>
+				<legend>Login form</legend>
+				<div>
+					<label for="username">Your username</label>
+					<input type="text" id="username" aria-describedby="username-tip" required />
+					<div role="tooltip" id="username-tip">Your username is your email address</div>
+				</div>
+				<div>
+					<label for="password">Your password</label>
+					<input type="text" id="password" aria-describedby="password-tip" required />
+					<div role="tooltip" id="password-tip">Was emailed to you when you signed up</div>
+				</div>
+			</fieldset>
+		</form>
+	</body>
+</html>
