@@ -20,7 +20,8 @@ Resources of the "Web Application Accessibility: a Dive into 508 Compliance" pre
 | sample-3.04.html  | Using JavaScript instead of tabindex (not recommended) |
 | sample-4.01.html  | Removing the focus outline when using the mouse |
 | sample-5.01.html  | Capturing navigation using JavaScript focus event |
-| sample-6.01.html  | WAI-ARIA |
+| sample-6.01.html  | Using WAI-ARIA |
+| sample-7.01.html  | Setting a map alternative text |
 
 ## Sample Story Maps
 
