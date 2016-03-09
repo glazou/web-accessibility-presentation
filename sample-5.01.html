@@ -22,6 +22,11 @@
 				cursor: pointer;
 			}
 
+			figure:focus {
+				background-color: #CCC;
+				/*outline: none;*/
+			}
+
 			.carousel img {
 				width: 130px;
 			}
@@ -108,6 +113,29 @@
 							}
 							else {
 								return true;
+							}
+						}
+					});
+
+					// Prevent blue outline when using the mouse
+					$("body").on("mousedown", "*", function(e) {
+						if (($(this).is(":focus") || $(this).is(e.target)) && $(this).css("outline-style") == "none") {
+							// Target any element that can be focused and don't have children
+							$(this).css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+
+							// Target the image carousel
+							// The carousel has a focus style that use a background color that don't goes really well
+							//   with the default focus outline, so when using mouse navigation let's disable the outline
+							// The outline will continue to be displayed when using keyboard navigation
+							// This require specific code as the container is focusable but user will likely click on one of it's child
+							// Disabling the ouline in CSS is possible but it would disable it for keyboard and mouse navigation
+							var figure = $(this).parents("figure");
+							if ( figure.length ) {
+								figure.css("outline", "none").on("blur", function() {
+									figure.off("blur").css("outline", "");
+								});
 							}
 						}
 					});
