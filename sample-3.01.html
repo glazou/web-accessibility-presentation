@@ -4,10 +4,10 @@
 		<title>Web accessibility demo</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		
+
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		
+
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
 	</head>
@@ -19,17 +19,21 @@
 				border: 1px dashed lightgrey;
 			}
 		</style>
-	
-		<h1 tabindex="0">Web accessibility demo</h1>
-		<h2 tabindex="0">Using JavaScript to make user generated content accessible</h2>
-		
-		<div class="user-content">
-			<p>Web accessibility refers to the inclusive practice of removing barriers that prevent access to websites by people with disabilities. When sites are correctly designed, developed and edited, all users have equal access to information and functionality.</p>
-			<p>The needs that Web accessibility aims to address include:</p>
-			
-			<p style="font-style: italic">Content from Wikipedia: <a href="http://en.wikipedia.org/wiki/Web_accessibility" target="_blank">Web accessibility</a><p>
-		</div>
-		
+
+		<header>
+			<h1 tabindex="0">Web accessibility demo</h1>
+			<h2 tabindex="0">Using JavaScript to make content accessible</h2>
+		</header>
+
+		<main role="main">
+			<div class="user-content">
+				<p>Web accessibility refers to the inclusive practice of removing barriers that prevent access to websites by people with disabilities. When sites are correctly designed, developed and edited, all users have equal access to information and functionality.</p>
+				<p>The needs that Web accessibility aims to address include:</p>
+
+				<p style="font-style: italic">Content from Wikipedia: <a href="http://en.wikipedia.org/wiki/Web_accessibility" target="_blank">Web accessibility</a><p>
+			</div>
+		</main>
+
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function()

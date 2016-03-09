@@ -4,17 +4,13 @@
 		<title>Web accessibility demo</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		
+
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		
+
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
-	</head>
-	<body class="claro">
-		<h1 tabindex="0">Web accessibility demo</h1>
-		<h2 tabindex="0">Capturing navigation using JavaScript focus event</h2>
-		
+
 		<style>
 			figure {
 				display: inline-block;
@@ -25,78 +21,87 @@
 				overflow: hidden;
 				cursor: pointer;
 			}
-			
+
 			.carousel img {
 				width: 130px;
 			}
-			
+
 			figcaption {
 				font-weight: bold;
 			}
-			
+
 			#largepicture {
 				width: 500px;
 			}
 		</style>
-		
-		<div class="carousel">
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/indian_canyons_thumbnail.jpg" alt="" />
-				<figcaption>Indian Canyons</figcaption>
-			</figure>
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/golf_course_thumbnail.jpg" alt="" />
-				<figcaption>Indian Canyons Golf Resort</figcaption>
-			</figure>
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/amazing_houses_thumbnail.jpg" alt="" />
-				<figcaption>Elrod House</figcaption>
-			</figure>
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/downtown_palm_springs_thumbnail.jpg" alt="" />
-				<figcaption>Palm Canyon Drive</figcaption>
-			</figure>
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/nightlife_thumbnail.jpg" alt="" />
-				<figcaption>Lulu California Bistro</figcaption>
-			</figure>
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/starbucks_oasis_office_building_thumbnail.jpg" alt="" />
-				<figcaption>Starbucks</figcaption>
-			</figure>
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/art_museum_thumbnail.jpg" alt="" />
-				<figcaption>Palm Springs Art Museum</figcaption>
-			</figure>
-			<figure tabindex="0">
-				<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/hiking_thumbnail.jpg" alt="" />
-				<figcaption>The Museum Trail</figcaption>
-			</figure>
-		</div>
-		
-		<div>
-			<img id="largepicture" src="" alt="" />
-		</div>
-		
-		<p style="font-style: italic" tabindex="0">Content from <a href="http://storymaps.esri.com/stories/maptour-palmsprings/">Palm Springs Map Tour</a><p>
-		
+	</head>
+	<body class="claro">
+		<header>
+			<h1 tabindex="0">Web accessibility demo</h1>
+			<h2 tabindex="0">Capturing navigation using JavaScript focus event</h2>
+		</header>
+
+		<main role="main">
+			<div class="carousel">
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/indian_canyons_thumbnail.jpg" alt="" />
+					<figcaption>Indian Canyons</figcaption>
+				</figure>
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/golf_course_thumbnail.jpg" alt="" />
+					<figcaption>Indian Canyons Golf Resort</figcaption>
+				</figure>
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/amazing_houses_thumbnail.jpg" alt="" />
+					<figcaption>Elrod House</figcaption>
+				</figure>
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/downtown_palm_springs_thumbnail.jpg" alt="" />
+					<figcaption>Palm Canyon Drive</figcaption>
+				</figure>
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/nightlife_thumbnail.jpg" alt="" />
+					<figcaption>Lulu California Bistro</figcaption>
+				</figure>
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/starbucks_oasis_office_building_thumbnail.jpg" alt="" />
+					<figcaption>Starbucks</figcaption>
+				</figure>
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/art_museum_thumbnail.jpg" alt="" />
+					<figcaption>Palm Springs Art Museum</figcaption>
+				</figure>
+				<figure>
+					<img src="http://downloads.esri.com/blogs/places/palmsprings/tour/hiking_thumbnail.jpg" alt="" />
+					<figcaption>The Museum Trail</figcaption>
+				</figure>
+			</div>
+
+			<div>
+				<img id="largepicture" src="" alt="" />
+			</div>
+
+			<p style="font-style: italic" tabindex="0">Content from <a href="http://storymaps.esri.com/stories/maptour-palmsprings/">Palm Springs Map Tour</a><p>
+		</main>
+
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function()
 			{
 				$("figure")
+					.attr('tabindex', 0)
 					.on('focus', function(e){
 						$("#largepicture").attr(
 							"src",
 							$(this).find("img").attr("src").replace("_thumbnail", "")
-						); 
+						);
 					});
-					
+
 				$("figure").last()
 					.on('keydown', function(e){
 						if( e.keyCode === 9 ) {
 							var isForward = ! e.shiftKey;
-							
+
 							if ( isForward ) {
 								$("h1").focus();
 								return false;

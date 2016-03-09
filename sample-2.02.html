@@ -4,13 +4,13 @@
 		<title>Web accessibility demo</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		
+
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		
+
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
-		
+
 		<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	</head>
 	<body class="claro">
@@ -22,36 +22,45 @@
 			.separator {
 				width: 150px;
 			}
+
+			*[role=button] {
+				cursor: pointer;
+			}
 		</style>
-		
-		<h1 tabindex="0">Web accessibility demo</h1>
-		<h2 tabindex="0">Accessible actions</h2>
-		
-		<p>
-			<a href="http://www.arcgis.com">
-				<img src="http://www.arcgis.com/apps/MapJournal/resources/tpl/viewer/icons/esri-logo.png" alt="Esri logo"/>
-			</a>
-		</p>
 
-		<img class="separator" src="assets/separator.png" alt="" />
-		
-		<p>
-			<a href="http://www.facebook.com/sharer/sharer.php?u=http://www.arcgis.com" target="_blank">Share on Facebook</a>
-		</p>
-		
-		<img class="separator" src="assets/separator.png" alt="" />
-		
-		<p>
-			<button onclick="window.open('https://plus.google.com/share?url=http://www.arcgis.com')">Share on Google+</button>
-		</p>
+		<header>
+			<h1 tabindex="0">Web accessibility demo</h1>
+			<h2 tabindex="0">Accessible actions</h2>
+		</header>
 
-		<img class="separator" src="assets/separator.png" alt="" />
+		<main role="main">
+			<p>
+				<a href="http://www.arcgis.com">
+					<img src="http://www.arcgis.com/apps/MapJournal/resources/tpl/viewer/icons/esri-logo.png" alt="Esri logo"/>
+				</a>
+			</p>
 
-		<p>
-			<i tabindex="0" title="Share on Twitter"
-				class="icon ion-social-twitter" style="width: 32px" role="button"
-				onclick="window.open('https://twitter.com/intent/tweet?text=Hello', '_blank');"></i>
-		</p>
+			<img class="separator" src="assets/separator.png" alt="" />
+
+			<p>
+				<a href="http://www.facebook.com/sharer/sharer.php?u=http://www.arcgis.com" target="_blank">Share on Facebook</a>
+			</p>
+
+			<img class="separator" src="assets/separator.png" alt="" />
+
+			<p>
+				<button onclick="window.open('https://plus.google.com/share?url=http://www.arcgis.com')">Share on Google+</button>
+			</p>
+
+			<img class="separator" src="assets/separator.png" alt="" />
+
+			<p>
+				<i tabindex="0" title="Share on Twitter"
+					class="icon ion-social-twitter" style="width: 32px"
+					role="button"
+					onclick="window.open('https://twitter.com/intent/tweet?text=Hello', '_blank');"></i>
+			</p>
+		</main>
 
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript">

@@ -4,40 +4,53 @@
 		<title>Web accessibility demo</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		
+
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		
+
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
-		
+
 		<link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">
 	</head>
 	<body class="claro">
-		<h1 tabindex="0">Web accessibility demo</h1>
-		<h2 tabindex="0">Map</h2>
-		
-		<style>
-			#map {
-				width: 400px;
-				height: 400px;
-			}
-		</style>
-		
-		<div id="map" tabindex="0" aria-label="This is a nice map that shows cool things."></div>
-		
-		<script src="http://js.arcgis.com/3.13/"></script>
-		<script>
-			var map;
+		<header>
+			<h1 tabindex="0">Web accessibility demo</h1>
+			<h2 tabindex="0">Map</h2>
+		</header>
 
-			require(["esri/map", "dojo/domReady!"], function(Map) {
-				map = new Map("map", {
-					basemap: "topo",
-					center: [-122.45, 37.75],
-					zoom: 10
+		<main role="main">
+			<style>
+				#map1, #map2 {
+					width: 400px;
+					height: 400px;
+				}
+			</style>
+
+			<h3 tabindex="0">Default map</h3>
+			<div id="map1" tabindex="0"></div>
+
+			<h3 tabindex="0">Map with alternative text</h3>
+			<div id="map2" tabindex="0" aria-label="This is a nice map that shows cool things."></div>
+
+			<script src="http://js.arcgis.com/3.13/"></script>
+			<script>
+				var map1, map2;
+
+				require(["esri/map", "dojo/domReady!"], function(Map) {
+					map1 = new Map("map1", {
+						basemap: "topo",
+						center: [-122.45, 37.75],
+						zoom: 10
+					});
+
+					map2 = new Map("map2", {
+						basemap: "topo",
+						center: [-122.45, 37.75],
+						zoom: 10
+					});
 				});
-			});
-		</script>
-		</head>
+			</script>
+		</main>
 	</body>
 </html>
