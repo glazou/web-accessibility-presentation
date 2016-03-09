@@ -55,3 +55,6 @@ Resources of the "Accessible Web Mapping Apps: ARIA, WCAG and 508 Compliance" pr
 * [How I Audit a Website for Accessibility](http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/)
 * [Reframing Accessibility for the Web](http://alistapart.com/article/reframing-accessibility-for-the-web)
 * [The web accessibility basics](https://www.marcozehe.de/2015/12/14/the-web-accessibility-basics/)
+* [The A11Y Project](http://a11yproject.com/)
+* [ARIA Examples](http://heydonworks.com/practical_aria_examples/)
+* [ally.js](http://allyjs.io/)
